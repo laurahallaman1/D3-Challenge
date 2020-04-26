@@ -27,14 +27,15 @@ var chartGroup = svg.append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 // Load data from data.csv
-d3.csv("assets/js/data.csv", function(error, statedata) {  
-    // Log an error if one exists
-    if (error) return console.warn(error)
+d3.csv("assets/js/data.csv").then(function(statedata, err) {
+  if (err) throw err;
 
-    statedata.forEach(function(data) {
-        data.poverty = +data.poverty;
-        data.smokes = +data.smokes;
-      });
+  // parse data
+  statedata.forEach(function(data) {
+    data.poverty = +data.poverty;
+    data.smokes = +data.smokes;
+    console.log("This works")
+  });
 
 
   // Create Scales
