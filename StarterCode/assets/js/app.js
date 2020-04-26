@@ -1,14 +1,12 @@
-// @TODO: YOUR CODE HERE!
-// Define SVG area dimensions
-// @TODO: YOUR CODE HERE!
-// Define SVG area dimensions
+// USED INSTRUCTOR LED AS A TEMPLATE
+// YOUR CODE HERE 
 var svgWidth = 960;
 var svgHeight = 500;
 
 var margin = {
   top: 20,
   right: 40,
-  bottom: 60,
+  bottom: 80,
   left: 100
 };
 
@@ -29,7 +27,7 @@ var chartGroup = svg.append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 // Load data from data.csv
-d3.csv("../data/data.csv", function(error, statedata) {  
+d3.csv("assets/js/data.csv", function(error, statedata) {  
     // Log an error if one exists
     if (error) return console.warn(error)
 
@@ -116,3 +114,4 @@ chartGroup.append("text")
 
 
     });
+
